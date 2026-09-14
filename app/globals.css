@@ -1,0 +1,198 @@
+@import "tailwindcss";
+
+:root {
+  /* Premium Utilitarian Minimalism & Editorial Palette */
+  --canvas-bg: #fbfbfa;
+  --canvas-bone: #f7f6f3;
+  --surface-card: #ffffff;
+  --surface-subtle: #f9f9f8;
+  --border-light: #eaeaea;
+  --border-hover: #111111;
+  --border-subtle: rgba(0, 0, 0, 0.06);
+
+  /* Typography Colors */
+  --text-primary: #111111;
+  --text-charcoal: #2f3437;
+  --text-secondary: #787774;
+  --text-muted: #9b9a97;
+
+  /* Muted Spot Pastels (Semantic Micro-Accents) */
+  --pastel-red-bg: #fdebec;
+  --pastel-red-text: #9f2f2d;
+  --pastel-blue-bg: #e1f3fe;
+  --pastel-blue-text: #1f6c9f;
+  --pastel-green-bg: #edf3ec;
+  --pastel-green-text: #346538;
+  --pastel-yellow-bg: #fbf3db;
+  --pastel-yellow-text: #956400;
+
+  /* Fonts */
+  --font-editorial: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", sans-serif;
+  --font-sans-editorial: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", sans-serif;
+  --font-mono-editorial: var(--font-geist-mono), "JetBrains Mono", Menlo, Consolas, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 84px;
+}
+
+body {
+  background-color: var(--canvas-bg);
+  color: var(--text-charcoal);
+  font-family: var(--font-sans-editorial);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Redesign-Skill: Micro-grain texture overlay to eliminate sterile digital flatness */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.022;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Editorial Heading Architecture with Balanced Wrapping */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-editorial);
+  color: var(--text-primary);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+.font-editorial {
+  font-family: var(--font-editorial);
+}
+
+.font-sans-ui {
+  font-family: var(--font-sans-editorial);
+}
+
+.font-mono-tech {
+  font-family: var(--font-mono-editorial);
+}
+
+/* Tabular figures for data integrity */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Redesign-Skill: Visible keyboard accessibility focus indicators */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--text-primary) !important;
+  outline-offset: 2px !important;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  background: var(--text-primary);
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  z-index: 9999;
+  transition: top 0.2s ease;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+}
+.skip-link:focus { top: 0.5rem; }
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--canvas-bg); }
+::-webkit-scrollbar-thumb { background: #dcdbd8; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #b8b7b2; }
+
+::selection { background: #e1f3fe; color: #111111; }
+
+/* Subtle Minimalist Architectural Grid */
+.tech-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.035) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Tactile Active Push-Down Interaction Rule */
+button:active, a.button-tactile:active, .tactile-card:active {
+  transform: scale(0.985);
+  transition-duration: 75ms;
+}
+
+/* Utilitarian Document Card with Spotlight Border */
+.utilitarian-card {
+  background: var(--surface-card);
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  transition: box-shadow 250ms cubic-bezier(0.16, 1, 0.3, 1), border-color 250ms ease, transform 250ms ease;
+}
+.utilitarian-card:hover {
+  box-shadow: 0 6px 24px rgba(17, 17, 17, 0.04);
+  border-color: #111111;
+}
+
+/* Physical Keystroke Badge */
+kbd, .kbd-badge {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-mono-editorial);
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: var(--canvas-bone);
+  border: 1px solid var(--border-light);
+  color: var(--text-charcoal);
+}
+
+/* Horizontal Marquee & Scroll Utilities */
+@keyframes marquee-slide {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee-slide 38s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+

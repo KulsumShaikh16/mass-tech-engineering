@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mas Tech Engineering - Cinematic</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
+
+    :root {
+      --bg: #000;
+      --fg: #fff;
+    }
+    
+    body {
+      margin: 0;
+      padding: 0;
+      width: 1920px;
+      height: 1080px;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: 'Inter', sans-serif;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    #stage {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background: #000;
+    }
+
+    .scene {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      opacity: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .bg-image {
+      position: absolute;
+      top: -10%; left: -10%;
+      width: 120%; height: 120%;
+      object-fit: cover;
+      opacity: 0.6; /* Dim image for text readability */
+    }
+
+    .content {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      width: 1400px;
+    }
+
+    .title {
+      font-size: 90px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin: 0;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.8);
+      transform: translateY(30px);
+      opacity: 0;
+    }
+
+    .subtitle {
+      font-size: 40px;
+      font-weight: 300;
+      color: #cbd5e1;
+      margin-top: 20px;
+      letter-spacing: 2px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+      transform: translateY(30px);
+      opacity: 0;
+    }
+    
+    .logo-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .logo-img {
+      width: 400px;
+      margin-bottom: 40px;
+      transform: scale(0.9);
+      opacity: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="stage">
+    
+    <!-- Scene 0: Intro -->
+    <div class="scene" id="scene-0">
+      <img src="public/hero-industrial.jpg" class="bg-image" id="bg-0" />
+      <div class="content">
+        <h1 class="title" id="title-0">Mas Tech Engineering</h1>
+        <div class="subtitle" id="sub-0">Smart Solutions. Strong Security.</div>
+      </div>
+    </div>
+
+    <!-- Scene 1: Solar -->
+    <div class="scene" id="scene-1">
+      <img src="public/mastech-solar-rooftop.jpg" class="bg-image" id="bg-1" />
+      <div class="content">
+        <h1 class="title" id="title-1">Solar Systems</h1>
+        <div class="subtitle" id="sub-1">Sustainable power for residential and commercial.</div>
+      </div>
+    </div>
+
+    <!-- Scene 2: CCTV -->
+    <div class="scene" id="scene-2">
+      <img src="public/mastech-cctv-surveillance.jpg" class="bg-image" id="bg-2" />
+      <div class="content">
+        <h1 class="title" id="title-2">CCTV Surveillance</h1>
+        <div class="subtitle" id="sub-2">24/7 HD monitoring to protect what matters.</div>
+      </div>
+    </div>
+
+    <!-- Scene 3: Gates -->
+    <div class="scene" id="scene-3">
+      <img src="public/mastech-barrier-gate.jpg" class="bg-image" id="bg-3" />
+      <div class="content">
+        <h1 class="title" id="title-3">Access Control</h1>
+        <div class="subtitle" id="sub-3">Automated barriers and walk-through gates.</div>
+      </div>
+    </div>
+
+    <!-- Scene 4: Outro -->
+    <div class="scene" id="scene-4">
+      <div class="content logo-container">
+        <img src="public/mastech-logo-full.png" class="logo-img" id="logo-out" />
+        <h1 class="title" style="font-size: 60px;" id="title-4">Free Site Survey & Quotation</h1>
+        <div class="subtitle" id="sub-4">Contact us today to secure your future.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const clamp = (val, min, max) => Math.min(Math.max(val, min), max);
+    const mapTime = (t, start, end) => clamp((t - start) / (end - start), 0, 1);
+    const easeOutCubic = (x) => 1 - Math.pow(1 - x, 3);
+    const easeInOutCubic = x => x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2;
+
+    window.renderFrame = function(tMs) {
+      
+      const scenes = [
+        { id: 0, start: 0, end: 4000, type: 'image' },
+        { id: 1, start: 4000, end: 8000, type: 'image' },
+        { id: 2, start: 8000, end: 12000, type: 'image' },
+        { id: 3, start: 12000, end: 16000, type: 'image' },
+        { id: 4, start: 16000, end: 20000, type: 'outro' },
+      ];
+
+      scenes.forEach((s) => {
+        const el = document.getElementById(`scene-${s.id}`);
+        const title = document.getElementById(`title-${s.id}`);
+        const sub = document.getElementById(`sub-${s.id}`);
+        
+        // Is the scene active? Provide a 1000ms crossfade
+        const crossfadeTime = 1000;
+        const fadeIn = mapTime(tMs, s.start, s.start + crossfadeTime);
+        const fadeOut = mapTime(tMs, s.end - crossfadeTime, s.end);
+        
+        const opacity = fadeIn - fadeOut;
+        el.style.opacity = opacity;
+
+        if (opacity > 0) {
+          // Text animation (fade up)
+          const textP = mapTime(tMs, s.start + 500, s.start + 1500);
+          const textE = easeOutCubic(textP);
+          
+          if (title) {
+            title.style.opacity = textE;
+            title.style.transform = `translateY(${30 * (1 - textE)}px)`;
+          }
+
+          const subP = mapTime(tMs, s.start + 800, s.start + 1800);
+          const subE = easeOutCubic(subP);
+          if (sub) {
+            sub.style.opacity = subE;
+            sub.style.transform = `translateY(${30 * (1 - subE)}px)`;
+          }
+
+          // specific animations
+          if (s.type === 'image') {
+            const bg = document.getElementById(`bg-${s.id}`);
+            // Slow zoom or pan based on time inside scene
+            const bgProgress = mapTime(tMs, s.start, s.end);
+            
+            // Alternate pan left/right or zoom
+            if (s.id % 2 === 0) {
+              // Zoom in
+              const scale = 1 + (0.1 * bgProgress);
+              bg.style.transform = `scale(${scale})`;
+            } else {
+              // Pan left
+              const xOffset = -50 * bgProgress;
+              bg.style.transform = `translateX(${xOffset}px) scale(1.1)`;
+            }
+          } else if (s.type === 'outro') {
+            const logo = document.getElementById('logo-out');
+            if (logo) {
+              const logoP = mapTime(tMs, s.start + 200, s.start + 1200);
+              const logoE = easeOutCubic(logoP);
+              logo.style.opacity = logoE;
+              logo.style.transform = `scale(${0.9 + 0.1 * logoE})`;
+            }
+          }
+        }
+      });
+    };
+  </script>
+</body>
+</html>

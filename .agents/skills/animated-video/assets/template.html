@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Animation Scene</title>
+  <style>
+    :root {
+      --bg: #111;
+      --fg: #eee;
+      --accent: #ff3366;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      width: 1920px;
+      height: 1080px;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: system-ui, -apple-system, sans-serif;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #stage {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+    .element {
+      position: absolute;
+      font-size: 80px;
+      font-weight: bold;
+      opacity: 0;
+      transform: translateY(50px);
+    }
+  </style>
+</head>
+<body>
+  <div id="stage">
+    <div id="text1" class="element" style="left: 200px; top: 300px;">Hello, Motion Graphics</div>
+    <div id="text2" class="element" style="left: 200px; top: 400px; color: var(--accent);">Rendered Frame-by-Frame</div>
+  </div>
+
+  <script>
+    // Easing functions
+    const easeOutExpo = (x) => x === 1 ? 1 : 1 - Math.pow(2, -10 * x);
+    const clamp = (val, min, max) => Math.min(Math.max(val, min), max);
+    
+    // Maps time t from [start, end] to [0, 1]
+    const mapTime = (t, start, end) => clamp((t - start) / (end - start), 0, 1);
+
+    // This function is called by the headless browser for every frame
+    window.renderFrame = function(tMs) {
+      // 1. First text element animates in from 500ms to 1500ms
+      const p1 = mapTime(tMs, 500, 1500);
+      const e1 = easeOutExpo(p1);
+      const el1 = document.getElementById('text1');
+      el1.style.opacity = p1;
+      el1.style.transform = `translateY(${50 * (1 - e1)}px)`;
+
+      // 2. Second text element staggered, from 1000ms to 2000ms
+      const p2 = mapTime(tMs, 1000, 2000);
+      const e2 = easeOutExpo(p2);
+      const el2 = document.getElementById('text2');
+      el2.style.opacity = p2;
+      el2.style.transform = `translateY(${50 * (1 - e2)}px)`;
+    };
+  </script>
+</body>
+</html>
