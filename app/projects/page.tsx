@@ -192,10 +192,10 @@ export default function ProjectsPage() {
               Book Site Survey
             </Link>
             <a
-              href="https://wa.me/923298737321"
+              href="https://wa.me/923212103576"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-white border border-[#eaeaea] hover:bg-[#fbfbfa] text-[#111111] font-medium text-xs rounded-[6px] transition-all"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#edf3ec] border border-[#d2e4d0] text-[#346538] hover:bg-[#e0ebe0] font-medium text-xs rounded-[6px] transition-all"
             >
               WhatsApp Engineering Desk
             </a>

@@ -402,9 +402,13 @@ export default function HomePage() {
               </p>
               
               <div className="space-y-3 font-mono text-xs text-[#2f3437] pt-5 border-t border-[#eaeaea]">
-                <div className="flex items-center justify-between">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
                   <span className="text-[#787774]">DIRECT CALL &amp; WHATSAPP:</span>
-                  <a href="tel:+923298737321" className="font-semibold text-[#111111] hover:underline tabular-nums">0329-8737321</a>
+                  <div className="flex items-center gap-2 font-semibold text-[#111111] tabular-nums">
+                    <a href="tel:+923212103576" className="hover:text-[#346538] hover:underline">0321-2103576</a>
+                    <span className="text-[#d0d0d0]">|</span>
+                    <a href="tel:+923369222274" className="hover:text-[#346538] hover:underline">0336-9222274</a>
+                  </div>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-[#787774]">QUALITY FOCUS:</span>
@@ -425,7 +429,7 @@ export default function HomePage() {
                   <ArrowRightIcon className="w-3.5 h-3.5" />
                 </Link>
                 <a
-                  href="https://wa.me/923298737321"
+                  href="https://wa.me/923212103576"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="button-tactile inline-flex items-center gap-2 px-5 py-2.5 rounded-[6px] bg-white border border-[#eaeaea] hover:bg-[#fbfbfa] text-[#111111] font-medium text-xs transition-all"
@@ -620,20 +624,26 @@ export default function HomePage() {
             </p>
 
             {/* Direct Contact Hotline Bar */}
-            <div className="inline-flex flex-wrap items-center justify-center gap-4 p-3.5 mb-8 rounded-xl bg-white border border-[#eaeaea] shadow-sm">
+            <div className="inline-flex flex-wrap items-center justify-center gap-3 p-3.5 mb-8 rounded-xl bg-white border border-[#eaeaea] shadow-sm">
               <a
-                href="tel:+923298737321"
+                href="tel:+923212103576"
                 className="inline-flex items-center gap-2 font-mono text-xs sm:text-sm font-semibold text-[#111111] hover:text-[#346538] transition-colors px-3 py-1.5 rounded-lg bg-[#fbfbfa] border border-[#eaeaea]"
               >
-                <span>📞 0329-8737321</span>
+                <span>📞 0321-2103576</span>
               </a>
               <a
-                href="https://wa.me/923298737321"
+                href="tel:+923369222274"
+                className="inline-flex items-center gap-2 font-mono text-xs sm:text-sm font-semibold text-[#111111] hover:text-[#346538] transition-colors px-3 py-1.5 rounded-lg bg-[#fbfbfa] border border-[#eaeaea]"
+              >
+                <span>📞 0336-9222274</span>
+              </a>
+              <a
+                href="https://wa.me/923212103576"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 font-mono text-xs sm:text-sm font-semibold text-[#346538] hover:underline px-3 py-1.5 rounded-lg bg-[#edf3ec] border border-[#d2e4d0]"
               >
-                <span>📱 Call / WhatsApp</span>
+                <span>💬 WhatsApp Desk</span>
               </a>
             </div>
 
@@ -669,7 +679,7 @@ export default function HomePage() {
               </Link>
 
               <a
-                href="https://wa.me/923298737321"
+                href="https://wa.me/923212103576"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="button-tactile h-11 px-4.5 rounded-[6px] font-medium text-xs text-[#346538] bg-[#edf3ec] border border-[#d2e4d0] hover:bg-[#d2e4d0] transition-all duration-150 inline-flex items-center gap-2 whitespace-nowrap"

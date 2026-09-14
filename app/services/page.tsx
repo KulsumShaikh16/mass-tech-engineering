@@ -137,13 +137,13 @@ export default function ServicesPage() {
                 </svg>
               </Link>
               <a
-                href="https://wa.me/923298737321"
+                href="https://wa.me/923212103576"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-white border border-[#eaeaea] hover:bg-[#f7f6f3] text-[#111111] rounded-[6px] text-xs font-medium transition-all"
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#edf3ec] border border-[#d2e4d0] text-[#346538] hover:bg-[#e0ebe0] rounded-[6px] text-xs font-medium transition-all"
               >
                 <span className="w-1.5 h-1.5 rounded-full bg-[#346538]" />
-                <span>WhatsApp: 0329-8737321</span>
+                <span>WhatsApp: 0321-2103576 / 0336-9222274</span>
               </a>
             </div>
           </div>

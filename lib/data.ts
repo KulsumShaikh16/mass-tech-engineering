@@ -196,6 +196,36 @@ export const testimonials: Testimonial[] = [
   },
 ];
 
+export interface OfficeLocation {
+  city: string;
+  type: string;
+  address: string;
+  details?: string;
+}
+
+export const companyInfo = {
+  name: "Mas Tech Engineering",
+  tagline: "Smart Solutions, Strong Security, Bright Future",
+  phones: [
+    { display: "0321-2103576", raw: "+923212103576", intl: "+92-321-2103576", label: "Primary Helpline & WhatsApp" },
+    { display: "0336-9222274", raw: "+923369222274", intl: "+92-336-9222274", label: "Engineering Desk & WhatsApp" },
+  ],
+  email: "mastechengineering@outlook.com",
+  offices: {
+    headOffice: {
+      city: "Karachi",
+      type: "Head Office",
+      address: "Suit No. # 7-8, Mina Avenue, Shahrah-e-Faisal, Karachi.",
+    },
+    branchOffice: {
+      city: "Islamabad",
+      type: "Branch Office",
+      address: "Suit No. # 203., J1 Tower, B-Block, Faisal Town, Islamabad.",
+    },
+  },
+  workingHours: "Saturday – Thursday, 9:00 am – 7:00 pm",
+};
+
 export const processSteps: ProcessStep[] = [
   { num: "01", title: "Free Site Survey", description: "An engineer visits your site to understand the layout and your security needs — completely free of charge." },
   { num: "02", title: "Quotation & Design", description: "You get a clear, itemised quotation with the right system for your budget. No hidden costs." },

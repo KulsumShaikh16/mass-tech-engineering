@@ -65,20 +65,33 @@ const jsonLd = {
   "image": "https://mastechengineering.com/mastech-logo-official.jpeg",
   "@id": "https://mastechengineering.com",
   "url": "https://mastechengineering.com",
-  "telephone": "+923298737321",
+  "telephone": ["+923212103576", "+923369222274"],
+  "email": "mastechengineering@outlook.com",
   "priceRange": "$$",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Suite 203, J1 Tower, Block B, Faisal Town",
-    "addressLocality": "Islamabad",
-    "addressRegion": "ICT",
-    "postalCode": "44000",
-    "addressCountry": "PK"
-  },
+  "address": [
+    {
+      "@type": "PostalAddress",
+      "name": "Head Office — Karachi",
+      "streetAddress": "Suit No. # 7-8, Mina Avenue, Shahrah-e-Faisal",
+      "addressLocality": "Karachi",
+      "addressRegion": "Sindh",
+      "postalCode": "75350",
+      "addressCountry": "PK"
+    },
+    {
+      "@type": "PostalAddress",
+      "name": "Branch Office — Islamabad",
+      "streetAddress": "Suit No. # 203., J1 Tower, B-Block, Faisal Town",
+      "addressLocality": "Islamabad",
+      "addressRegion": "ICT",
+      "postalCode": "44000",
+      "addressCountry": "PK"
+    }
+  ],
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": 33.6716,
-    "longitude": 73.0551
+    "latitude": 24.8607,
+    "longitude": 67.0011
   },
   "openingHoursSpecification": {
     "@type": "OpeningHoursSpecification",
@@ -94,11 +107,14 @@ const jsonLd = {
     "closes": "19:00"
   },
   "sameAs": [
-    "https://wa.me/923298737321"
+    "https://wa.me/923212103576",
+    "https://wa.me/923369222274"
   ],
   "areaServed": [
+    "Karachi",
     "Islamabad",
     "Rawalpindi",
+    "Sindh",
     "Punjab",
     "Pakistan"
   ],
@@ -129,7 +145,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <Navbar />
-        <main id="main" style={{ paddingTop: "96px" }} className="min-h-screen">
+        <main id="main" className="min-h-screen pt-[74px] sm:pt-[80px] lg:pt-[108px]">
           {children}
         </main>
         <Footer />

@@ -215,10 +215,16 @@ export default function ProductsPage() {
               Contact Hardware Team
             </Link>
             <a
-              href="tel:+923298737321"
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-white border border-[#eaeaea] hover:bg-[#fbfbfa] text-[#111111] font-mono text-xs rounded-[6px] transition-all"
+              href="tel:+923212103576"
+              className="inline-flex items-center gap-2 px-4 py-2.5 bg-white border border-[#eaeaea] hover:border-[#111111] text-[#111111] font-mono text-xs rounded-[6px] transition-all"
             >
-              Call 0329-8737321
+              Call 0321-2103576
+            </a>
+            <a
+              href="tel:+923369222274"
+              className="inline-flex items-center gap-2 px-4 py-2.5 bg-white border border-[#eaeaea] hover:border-[#111111] text-[#111111] font-mono text-xs rounded-[6px] transition-all"
+            >
+              Call 0336-9222274
             </a>
           </div>
         </AnimatedSection>

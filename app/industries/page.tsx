@@ -48,8 +48,9 @@ export default function IndustriesPage() {
           <p className="text-[#787774] text-sm mb-1">Not sure if we cover your type of site?</p>
           <p className="text-[#111111] font-editorial text-2xl mb-6">Contact our engineering desk for immediate assessment.</p>
           <div className="flex flex-wrap justify-center gap-3">
-            <a href="tel:+923298737321" className="px-5 py-2.5 bg-white border border-[#eaeaea] hover:border-[#111111] text-[#111111] rounded-[6px] transition-all text-xs font-mono">0329-8737321</a>
-            <Link href="/contact" className="px-6 py-2.5 bg-[#111111] hover:bg-[#2f3437] text-white font-medium rounded-[6px] transition-all text-xs">Request free survey</Link>
+            <a href="tel:+923212103576" className="px-4 py-2.5 bg-white border border-[#eaeaea] hover:border-[#111111] text-[#111111] rounded-[6px] transition-all text-xs font-mono">0321-2103576</a>
+            <a href="tel:+923369222274" className="px-4 py-2.5 bg-white border border-[#eaeaea] hover:border-[#111111] text-[#111111] rounded-[6px] transition-all text-xs font-mono">0336-9222274</a>
+            <Link href="/contact" className="px-5 py-2.5 bg-[#111111] hover:bg-[#2f3437] text-white font-medium rounded-[6px] transition-all text-xs">Request free survey</Link>
           </div>
         </AnimatedSection>
       </div>

@@ -106,14 +106,20 @@ export default function CommandCenterVisual() {
           </span>
         </div>
 
-        <div className="flex items-center gap-3 font-mono text-xs">
-          <span className="text-[#787774] hidden md:inline">DIRECT LINE:</span>
+        <div className="flex items-center gap-2 font-mono text-xs">
+          <span className="text-[#787774] hidden md:inline">DIRECT LINES:</span>
           <a
-            href="tel:+923298737321"
-            className="px-3 py-1 rounded-[6px] bg-[#f7f6f3] border border-[#eaeaea] text-[#111111] hover:bg-white hover:border-[#111111] transition-all font-mono text-xs flex items-center gap-2 tabular-nums"
+            href="tel:+923212103576"
+            className="px-2.5 py-1 rounded-[6px] bg-[#f7f6f3] border border-[#eaeaea] text-[#111111] hover:bg-white hover:border-[#111111] transition-all font-mono text-xs flex items-center gap-1.5 tabular-nums"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-[#346538]" />
-            <span>0329-8737321</span>
+            <span>0321-2103576</span>
+          </a>
+          <a
+            href="tel:+923369222274"
+            className="px-2.5 py-1 rounded-[6px] bg-[#f7f6f3] border border-[#eaeaea] text-[#111111] hover:bg-white hover:border-[#111111] transition-all font-mono text-xs hidden sm:flex items-center gap-1.5 tabular-nums"
+          >
+            <span>0336-9222274</span>
           </a>
         </div>
       </div>
@@ -152,7 +158,7 @@ export default function CommandCenterVisual() {
             </Link>
 
             <a
-              href="https://wa.me/923298737321"
+              href="https://wa.me/923212103576"
               target="_blank"
               rel="noopener noreferrer"
               className="button-tactile h-11 px-4.5 rounded-[6px] bg-white border border-[#eaeaea] hover:bg-[#f7f6f3] hover:border-[#111111] text-[#111111] font-medium text-xs transition-all duration-150 inline-flex items-center gap-2"

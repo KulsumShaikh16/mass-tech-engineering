@@ -50,7 +50,7 @@ function QuoteFormContent() {
     e.preventDefault();
     if (!validate()) return;
     const text = `Hello Mas Tech Engineering, I would like a free site survey and quotation.\nName: ${form.name}\nPhone: ${form.phone}\nService: ${form.service}${form.message ? `\nDetails: ${form.message}` : ""}`;
-    window.open(`https://wa.me/923298737321?text=${encodeURIComponent(text)}`, "_blank", "noopener");
+    window.open(`https://wa.me/923212103576?text=${encodeURIComponent(text)}`, "_blank", "noopener");
     setSuccess(true);
     setForm({ name: "", phone: "", service: "", message: "" });
     setTimeout(() => setSuccess(false), 5000);
