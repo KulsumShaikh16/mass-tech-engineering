@@ -179,11 +179,31 @@ kbd, .kbd-badge {
 .animate-marquee {
   display: flex;
   width: max-content;
-  animation: marquee-slide 38s linear infinite;
+  animation: marquee-slide 120s linear infinite;
   will-change: transform;
 }
 
 .animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-slide-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-marquee-reverse {
+  display: flex;
+  width: max-content;
+  animation: marquee-slide-reverse 140s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-reverse:hover {
   animation-play-state: paused;
 }
 
@@ -194,5 +214,41 @@ kbd, .kbd-badge {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* ── CLIENT LOGO DISPLAY SYSTEM ─────────────────────────────────── */
+.logo-container {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.logo-container img {
+  max-width: 85%;
+  max-height: 65px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+
+.logo-container img.logo-wide {
+  max-width: 95%;
+  max-height: 55px;
+}
+
+.logo-container img.logo-square {
+  max-width: 65px;
+  max-height: 65px;
+}
+
+.logo-container img.logo-tall {
+  max-width: 60px;
+  max-height: 68px;
+}
+
 
 

@@ -75,6 +75,7 @@ export default function Footer() {
                 "Electric Perimeter Fencing",
                 "Metal Detect Walkthroughs",
                 "Passenger & Cargo Lifts",
+                "General Order Supplier",
               ].map((s) => (
                 <li key={s}>
                   <Link

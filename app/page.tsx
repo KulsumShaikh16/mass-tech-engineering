@@ -5,6 +5,7 @@ import Link from "next/link";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import StatsCounter from "@/components/home/StatsCounter";
 import CommandCenterVisual from "@/components/home/CommandCenterVisual";
+import ClientsSection from "@/components/home/ClientsSection";
 import {
   SolarIcon,
   CctvIcon,
@@ -14,6 +15,7 @@ import {
   ElevatorIcon,
   EscalatorIcon,
   ElectricalIcon,
+  SupplierIcon,
   ArrowRightIcon,
 } from "@/components/ui/Icons";
 
@@ -30,6 +32,55 @@ const brandLogos = [
   { name: "Uniview", tag: "Thermal & Smart Optics" },
   { name: "Jinko Solar", tag: "N-Type TOPCon Panels" },
   { name: "Inverex", tag: "Hybrid Power Management" },
+];
+
+const trustedClients = [
+  // Defence & Military
+  { name: "Pakistan Army", abbr: "PA", tag: "Defence & Security", color: "#1a3a2a", logo: "/images/clients/logo-pak-army.png" },
+  { name: "Pak Army MI", abbr: "MI", tag: "Military Intelligence", color: "#1a3a2a", logo: "/images/clients/logo-pak-mi.png" },
+  { name: "ISI Pak Army", abbr: "ISI", tag: "Intelligence Agency", color: "#1a3a2a", logo: "/images/clients/logo-isi.png" },
+  { name: "315 Engineering Pak Army", abbr: "315", tag: "Army Engineering Corps", color: "#1a3a2a", logo: "/images/clients/logo-315-eng.png" },
+  { name: "Pak Army SSD", abbr: "SSD", tag: "Army Division", color: "#1a3a2a", logo: "/images/clients/logo-pak-ssd.png" },
+  { name: "Pakistan Rangers", abbr: "PR", tag: "Para-Military Force", color: "#2a3a1a", logo: "/images/clients/logo-pak-rangers.png" },
+  { name: "Saad School of Army Air Defence", abbr: "SSAAD", tag: "Army Air Defence", color: "#1a2a3a", logo: "/images/clients/logo-saad-aad.png" },
+  // Cantonment & Government
+  { name: "Cantonment Board Malir Cantt", abbr: "CBM", tag: "Local Government", color: "#2a1a3a", logo: "/images/clients/logo-cantt-board.png" },
+  { name: "Cantt Degree College", abbr: "CDC", tag: "Cantonment Education", color: "#3a2a1a", logo: "/images/clients/logo-cantt-college.png" },
+  { name: "Askari 5", abbr: "A5", tag: "Army Housing Society", color: "#1a3a2a", logo: "/images/clients/logo-askari5.png" },
+  { name: "Askari 4", abbr: "A4", tag: "Army Housing Society", color: "#1a3a2a", logo: "/images/clients/logo-askari.png" },
+  // Education
+  { name: "APSACS Cambridge", abbr: "APS", tag: "Cambridge Education", color: "#1f4068", logo: "/images/clients/logo-apsacs.png" },
+  { name: "APS College", abbr: "APSC", tag: "Army Public College", color: "#1f4068", logo: "/images/clients/logo-aps-college.png" },
+  { name: "APS School", abbr: "APS", tag: "Army Public School", color: "#1f4068", logo: "/images/clients/logo-aps-school.png" },
+  { name: "CB School", abbr: "CBS", tag: "Cantonment School", color: "#1f4068", logo: "/images/clients/logo-cb-school.png" },
+  { name: "Al Kamran School", abbr: "AKS", tag: "Private School", color: "#2a4a1a", logo: "/images/clients/logo-al-kamran.png" },
+  { name: "Smart School", abbr: "SS", tag: "Educational Institute", color: "#2a4a1a", logo: "/images/clients/logo-smart-school.png" },
+  { name: "Iqra Library Malir Cantt", abbr: "IQL", tag: "Public Library", color: "#3a3a1a", logo: "/images/clients/logo-iqra-library.png" },
+  // Healthcare
+  { name: "KIMS Medical College", abbr: "KIMS", tag: "Medical Institution", color: "#3a1a1a", logo: "/images/clients/logo-kims.png" },
+  { name: "KIMS Girls Hostel", abbr: "KGH", tag: "Medical Hostel", color: "#3a1a1a", logo: "/images/clients/logo-kims-hostel.png" },
+  { name: "Kohat CMH", abbr: "CMH", tag: "Combined Military Hospital", color: "#3a1a2a", logo: "/images/clients/logo-kohat-cmh.png" },
+  // Religious & Community
+  { name: "St. Paul Church Malir Cantt", abbr: "SPC", tag: "Community Church", color: "#3a2a1a", logo: "/images/clients/logo-st-paul.png" },
+  // Commercial
+  { name: "4dot Market Malir Cantt", abbr: "4M", tag: "Commercial Market", color: "#1a2a3a", logo: "/images/clients/logo-4dot-market.png" },
+  { name: "Millennium Mall", abbr: "MM", tag: "Shopping Centre", color: "#1a2a3a", logo: "/images/clients/logo-mill2.png" },
+  { name: "Move In Pic Hotel", abbr: "MIPH", tag: "Hospitality", color: "#2a1a2a", logo: "/images/clients/logo-movein-hotel.png" },
+  { name: "Parikh Estate", abbr: "PE", tag: "Real Estate", color: "#2a2a1a", logo: "/images/clients/logo-parikh-estate.png" },
+  { name: "Zameen.com", abbr: "ZC", tag: "Property Portal", color: "#1a3a3a", logo: "/images/clients/logo-zameen2.png" },
+  // Petroleum & Energy
+  { name: "PSO Head Office", abbr: "PSO", tag: "State Oil Company", color: "#1a1a3a", logo: "/images/clients/logo-pso.png" },
+  { name: "Bilal Petroleum", abbr: "BP", tag: "Petroleum Retail", color: "#1a1a3a", logo: "/images/clients/logo-bilal2.png" },
+  { name: "Byco Petroleum Windar", abbr: "BPW", tag: "Petroleum & Refinery", color: "#1a1a3a", logo: "/images/clients/logo-byco2.png" },
+  { name: "AMC Pakistan", abbr: "AMC", tag: "Asset Management", color: "#2a1a3a", logo: "/images/clients/logo-amc.png" },
+  // Industrial
+  { name: "Safey Iron Pvt Ltd", abbr: "SIP", tag: "Iron Manufacturing", color: "#2a2a2a", logo: "/images/clients/logo-safey-iron.png" },
+  { name: "Shafeeq Steel Pvt Ltd", abbr: "SSP", tag: "Steel Manufacturing", color: "#2a2a2a", logo: "/images/clients/logo-shafeeq-steel.png" },
+  { name: "Adable Oils Pvt Ltd", abbr: "AOP", tag: "Oil Industry", color: "#2a2a1a", logo: "/images/clients/logo-adable-oils.png" },
+  { name: "Artistic Denim", abbr: "AD", tag: "Textile Industry", color: "#1a2a2a", logo: "/images/clients/logo-artistic-denim.png" },
+  { name: "Hub Salt", abbr: "HS", tag: "Salt Mining & Processing", color: "#2a3a3a", logo: "/images/clients/logo-hub-salt.png" },
+  { name: "Bolan Casting Hub", abbr: "BCH", tag: "Metal Casting", color: "#3a2a2a", logo: "/images/clients/logo-bolan-casting.png" },
+  { name: "The Burki Tyre", abbr: "TBT", tag: "Automotive & Tyre", color: "#1a2a1a", logo: "/images/clients/logo-burki-tyre.png" },
 ];
 
 const bentoSystems = [
@@ -144,6 +195,20 @@ const bentoSystems = [
     image: "/mastech-electrical-panel.jpg",
     pastelTag: "bg-[#e1f3fe] text-[#1f6c9f] border-[#cbe9fd]",
     featuredBadge: "Electrical Works",
+  },
+  {
+    id: "supplier",
+    title: "General Order Supplier & Engineering Procurement",
+    hook: "One-window procurement: we supply, deliver, and warranty all engineering & technical equipment.",
+    category: "Turnkey Procurement & Supply",
+    description:
+      "All-in-one general order supplier and turnkey procurement across Pakistan. We supply, deliver and commission complete electrical, security, mechanical, IT, solar, hardware, safety gear, and custom industrial equipment for commercial projects, corporate enterprises, and government/defence organizations.",
+    specs: ["One-Window Sourcing Across Pakistan", "Tender & Corporate BOQ Fulfillment", "GST/NTN Registered & Engineer Warrantied"],
+    icon: SupplierIcon,
+    colSpan: "lg:col-span-12",
+    image: "/mastech-general-supplier.jpg",
+    pastelTag: "bg-[#edf3ec] text-[#346538] border-[#d2e4d0]",
+    featuredBadge: "General Order Supplier",
   },
 ];
 
@@ -297,12 +362,12 @@ export default function HomePage() {
               Our Services
             </h2>
             <p className="text-sm sm:text-base text-[#787774] leading-relaxed">
-              Complete Engineering &amp; Security Solutions for Homes, Offices, Factories &amp; Commercial Projects.
-              Every installation is executed with attention to safety, performance, and long-term reliability.
+              Complete Engineering, Security &amp; General Order Supply Solutions for Homes, Offices, Factories, Government &amp; Commercial Projects.
+              Every installation and equipment delivery is executed with attention to safety, performance, and long-term reliability.
             </p>
           </AnimatedSection>
 
-          {/* 8-Service Grid Structure */}
+          {/* Full-Scope Engineering & General Order Supply Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6">
             {bentoSystems.map((item, idx) => {
               const IconComponent = item.icon;
@@ -559,6 +624,9 @@ export default function HomePage() {
 
       {/* ── 7. ANIMATED STATS TELEMETRY ────────────────────────────────────────────── */}
       <StatsCounter />
+
+      {/* ── 7B. TRUSTED CLIENTS DIRECTORY & SLIDER ──────────────────────────────── */}
+      <ClientsSection />
 
       {/* ── 8. VERIFIED CLIENT TESTIMONIALS ─────────────────────────────────────────── */}
       <section className="py-20 lg:py-24 relative">

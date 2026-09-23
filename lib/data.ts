@@ -122,6 +122,20 @@ export const services: Service[] = [
     badge: "Engineering Works",
     pastelTag: "bg-[#e1f3fe] text-[#1f6c9f] border-[#cbe9fd]",
   },
+  {
+    id: "supplier",
+    title: "General Order Supplier & Procurement",
+    description: "All-in-one general order supplier and turnkey technical procurement across Pakistan. We supply, deliver, and commission complete electrical, security, mechanical, IT, solar, hardware, safety gear, and custom industrial equipment for commercial projects, corporate enterprises, and government/defence organizations.",
+    bullets: [
+      "One-window procurement: we supply all engineering & technical goods",
+      "Official GST/NTN registered, tender execution & BOQ fulfillment",
+      "Electrical, security, IT hardware, machinery spares & safety PPE",
+    ],
+    icon: "supplier",
+    image: "/mastech-general-supplier.jpg",
+    badge: "General Order Supplier",
+    pastelTag: "bg-[#edf3ec] text-[#346538] border-[#d2e4d0]",
+  },
 ];
 
 export const extraServices: ExtraService[] = [
@@ -131,6 +145,8 @@ export const extraServices: ExtraService[] = [
   { name: "Smart home security systems", icon: "home" },
   { name: "Commercial roller shutters", icon: "shutter" },
   { name: "Automatic gates & access control", icon: "gate" },
+  { name: "General order supply & tender procurement", icon: "supplier" },
+  { name: "Industrial tools, machinery spares & safety PPE", icon: "supplier" },
 ];
 
 export const whyCards: WhyCard[] = [

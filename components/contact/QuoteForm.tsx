@@ -14,6 +14,7 @@ const SERVICES = [
   "Elevator systems",
   "Escalator systems",
   "Electrical & engineering services",
+  "General order supplier & procurement",
   "Not sure yet"
 ];
 

@@ -144,7 +144,7 @@ export default function CommandCenterVisual() {
 
           {/* Clean Descriptive Copy */}
           <p className="text-sm sm:text-base text-[#787774] leading-relaxed mb-8 max-w-xl">
-            Whether you need security, solar, access control, elevators, escalators or electrical engineering solutions, MAS TECH ENGINEERING provides professional solutions tailored to your requirements.
+            Whether you need security, solar, access control, elevators, escalators, electrical engineering, or full-scope General Order Supply and technical procurement, MAS TECH ENGINEERING provides professional solutions tailored to your requirements.
           </p>
 
           {/* Action CTAs: Requested Button Set */}
