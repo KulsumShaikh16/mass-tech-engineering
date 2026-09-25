@@ -94,60 +94,48 @@ export default function CommandCenterVisual() {
         <div className="absolute inset-0 tech-grid-pattern opacity-40" />
       </div>
 
-      {/* ── TOP UTILITY STRIP: VERIFICATION & DIRECT LINE ── */}
-      <div className="relative z-20 pb-6 mb-8 border-b border-[#eaeaea] flex flex-wrap items-center justify-between gap-4">
-        <div className="flex items-center gap-2.5">
+      {/* ── TOP UTILITY STRIP: VERIFICATION & CERTIFICATIONS ── */}
+      <div className="relative z-20 pb-5 mb-6 border-b border-[#eaeaea] flex flex-wrap items-center justify-between gap-3">
+        <div className="flex flex-wrap items-center gap-2 sm:gap-3">
           <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#edf3ec] border border-[#d2e4d0] text-[#346538] font-mono text-[11px] uppercase tracking-wider font-medium">
             <span className="w-1.5 h-1.5 rounded-full bg-[#346538]" />
             Islamabad &amp; Rawalpindi Certified
           </span>
-          <span className="hidden sm:inline font-mono text-xs text-[#787774]">
+          <span className="font-mono text-xs text-[#787774]">
             15+ Years Turnkey Engineering
           </span>
         </div>
 
-        <div className="flex items-center gap-2 font-mono text-xs">
-          <span className="text-[#787774] hidden md:inline">DIRECT LINES:</span>
-          <a
-            href="tel:+923212103576"
-            className="px-2.5 py-1 rounded-[6px] bg-[#f7f6f3] border border-[#eaeaea] text-[#111111] hover:bg-white hover:border-[#111111] transition-all font-mono text-xs flex items-center gap-1.5 tabular-nums"
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-[#346538]" />
-            <span>0321-2103576</span>
-          </a>
-          <a
-            href="tel:+923369222274"
-            className="px-2.5 py-1 rounded-[6px] bg-[#f7f6f3] border border-[#eaeaea] text-[#111111] hover:bg-white hover:border-[#111111] transition-all font-mono text-xs hidden sm:flex items-center gap-1.5 tabular-nums"
-          >
-            <span>0336-9222274</span>
-          </a>
+        <div className="flex items-center gap-2 font-mono text-[11px] text-[#346538] bg-[#edf3ec] px-2.5 py-1 rounded-full border border-[#d2e4d0]">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#346538] animate-pulse" />
+          <span>100% Genuine Hardware Warrantied</span>
         </div>
       </div>
 
       {/* ── MAIN HERO SPLIT: EDITORIAL COPY (LEFT) + DYNAMIC HARDWARE PREVIEW (RIGHT) ── */}
-      <div className="relative z-20 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+      <div className="relative z-20 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         
         {/* ── LEFT COLUMN (lg:col-span-7): Editorial Value Proposition ── */}
         <div className="lg:col-span-7 flex flex-col items-start">
           
           {/* Status Chip Strip */}
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#f7f6f3] border border-[#eaeaea] text-xs font-mono mb-5 text-[#2f3437]">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#f7f6f3] border border-[#eaeaea] text-[11px] font-mono mb-4 text-[#2f3437]">
             <span className="text-[#111111] font-semibold">MAS TECH ENGINEERING</span>
             <span className="text-[#787774]">·</span>
             <span className="text-[#787774]">SMART ENGINEERING. SMART SECURITY. SMART FUTURE.</span>
           </div>
 
           {/* Editorial Headline */}
-          <h1 className="font-editorial text-3xl sm:text-5xl lg:text-[46px] font-normal text-[#111111] leading-[1.12] tracking-[-0.03em] mb-5">
+          <h1 className="font-editorial text-2xl sm:text-3xl lg:text-[38px] font-medium text-[#111111] leading-[1.18] tracking-[-0.025em] mb-4 max-w-2xl">
             Complete Engineering &amp; Security Solutions for Homes, Offices, Factories &amp; Commercial Projects
           </h1>
 
           {/* Clean Descriptive Copy */}
-          <p className="text-sm sm:text-base text-[#787774] leading-relaxed mb-8 max-w-xl">
+          <p className="text-xs sm:text-sm text-[#787774] leading-relaxed mb-6 max-w-xl">
             Whether you need security, solar, access control, elevators, escalators, electrical engineering, or full-scope General Order Supply and technical procurement, MAS TECH ENGINEERING provides professional solutions tailored to your requirements.
           </p>
 
-          {/* Action CTAs: Requested Button Set */}
+          {/* Action CTAs */}
           <div className="flex flex-wrap items-center gap-3 mb-8 w-full sm:w-auto">
             <Link
               href="/contact"
@@ -157,19 +145,9 @@ export default function CommandCenterVisual() {
               <ArrowRightIcon className="w-3.5 h-3.5" />
             </Link>
 
-            <a
-              href="https://wa.me/923212103576"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="button-tactile h-11 px-4.5 rounded-[6px] bg-white border border-[#eaeaea] hover:bg-[#f7f6f3] hover:border-[#111111] text-[#111111] font-medium text-xs transition-all duration-150 inline-flex items-center gap-2"
-            >
-              <span className="w-2 h-2 rounded-full bg-[#346538]" />
-              <span>WHATSAPP US</span>
-            </a>
-
             <Link
               href="/services"
-              className="button-tactile h-11 px-4 rounded-[6px] bg-[#f7f6f3] border border-[#eaeaea] hover:bg-white hover:border-[#111111] text-[#111111] font-medium text-xs transition-all duration-150 inline-flex items-center gap-1.5"
+              className="button-tactile h-11 px-4.5 rounded-[6px] bg-[#f7f6f3] border border-[#eaeaea] hover:bg-white hover:border-[#111111] text-[#111111] font-medium text-xs transition-all duration-150 inline-flex items-center gap-1.5"
             >
               <span>OUR SERVICES</span>
             </Link>

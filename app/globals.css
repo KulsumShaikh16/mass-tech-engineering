@@ -37,6 +37,7 @@
 }
 
 html {
+  font-size: 15px;
   scroll-behavior: smooth;
   scroll-padding-top: 84px;
 }
@@ -164,6 +165,18 @@ kbd, .kbd-badge {
   background: var(--canvas-bone);
   border: 1px solid var(--border-light);
   color: var(--text-charcoal);
+}
+
+/* Right-side drawer slide-in */
+@keyframes slide-in-from-right {
+  from { transform: translateX(100%); opacity: 0; }
+  to   { transform: translateX(0);    opacity: 1; }
+}
+
+/* Left-side drawer slide-in */
+@keyframes slide-in-from-left {
+  from { transform: translateX(-100%); opacity: 0; }
+  to   { transform: translateX(0);     opacity: 1; }
 }
 
 /* Horizontal Marquee & Scroll Utilities */

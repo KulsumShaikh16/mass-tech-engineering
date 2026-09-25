@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import WhatsAppFloat from "@/components/layout/WhatsAppFloat";
+import ScrollToTop from "@/components/ui/ScrollToTop";
 
 const geistSans = Geist({
   subsets: ["latin"],
@@ -150,6 +151,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </main>
         <Footer />
         <WhatsAppFloat />
+        <ScrollToTop />
       </body>
     </html>
   );
