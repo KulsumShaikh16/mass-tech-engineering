@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://mastechengineering.com"),
+  metadataBase: new URL("https://www.mastechpak.com"),
   title: { default: "Mas Tech Engineering — Solar, CCTV & Security Systems", template: "%s | Mas Tech Engineering" },
   description: "Mas Tech Engineering delivers turnkey solar power arrays, AI CCTV surveillance, automatic barrier gates, electric fencing, walk-through metal detectors, elevators and electrical engineering across Islamabad & Rawalpindi.",
   keywords: [
@@ -63,9 +63,9 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "Mas Tech Engineering",
-  "image": "https://mastechengineering.com/mastech-logo-official.jpeg",
-  "@id": "https://mastechengineering.com",
-  "url": "https://mastechengineering.com",
+  "image": "https://www.mastechpak.com/mastech-logo-official.jpeg",
+  "@id": "https://www.mastechpak.com",
+  "url": "https://www.mastechpak.com",
   "telephone": ["+923212103576", "+923369222274"],
   "email": "mastechengineering@outlook.com",
   "priceRange": "$$",
